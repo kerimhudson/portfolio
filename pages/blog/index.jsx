@@ -9,7 +9,11 @@ const Blog = ({ posts }) => {
     <Layout title="Blog">
       <div className="blog">
         {posts.map((post) => (
-          <Link href="/blog/[post]" as={`/blog/${post.data.slug}`}>
+          <Link
+            key={post.data.slug}
+            href="/blog/[post]"
+            as={`/blog/${post.data.slug}`}
+          >
             <a>
               <summary>
                 <h2>{post.data.title}</h2>
